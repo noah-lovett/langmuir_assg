@@ -49,6 +49,7 @@ ax.plot(x, m*x+b, color='red', label=('Best fit: y = ' + str(round(m, 5)) + "x +
 ax.scatter(linearized_pressures, linearized_concentrations, color='blue', marker='o', label='Data')
 ax.set_xlabel('1/Pressure [1/bar]')
 ax.set_ylabel('1/Concentration [g/mmol]')
+ax.set_title("Inverse of Concentration vs. Inverse of Pressure")
 ax.legend()
 
 x = x[:5] # pressures up to 5 bar
@@ -68,6 +69,7 @@ ax2.scatter(pressures[:10], concentrations[:10], color='blue', marker='o', label
 ax2.legend()
 ax2.set_xlabel('Pressure [bar]')
 ax2.set_ylabel('Concentration [mmol/g]')
+ax2.set_title("Langmuir Isotherm Adsorption of Methane on Activated Carbon")
 
 fig, ax3 = plt.subplots()
 ax3.scatter(pressures[:10], concentrations[:10], color='blue', marker='o', label='Data')
@@ -75,5 +77,6 @@ ax3.plot(x, taylor_series, color='green', label='Taylor Series')
 ax3.legend()
 ax3.set_xlabel('Pressure [bar]')
 ax3.set_ylabel('Concentration [mmol/g]')
+ax3.set_title("Taylor Series of Langmuir Isotherm Adsorption")
 
 plt.show()
