@@ -44,6 +44,12 @@ print("Nm = " + str(Nm))
 k = (m*Nm)**-1
 print("k = " + str(k))
 
+#find R^2
+sum_squares = np.sum(np.square(linearized_concentrations-np.mean(linearized_concentrations)))
+sum_resids = np.sum(np.square(linearized_concentrations - (m*linearized_pressures+b)))
+R2 = 1 - sum_resids/sum_squares
+print("R2 = " + str(R2))
+
 fig, ax = plt.subplots()
 ax.plot(x, m*x+b, color='red', label=('Best fit: y = ' + str(round(m, 5)) + "x + " + str(round(b, 5))))
 ax.scatter(linearized_pressures, linearized_concentrations, color='blue', marker='o', label='Data')
